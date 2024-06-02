@@ -1,0 +1,27 @@
+version: '3.8'
+services:
+  mysql:
+    image: mysql:5.7
+    platform: linux/amd64
+    ports:
+      - '3306:3306'
+    environment:
+      MYSQL_ROOT_PASSWORD: secret
+      MYSQL_DATABASE: moviedb
+    volumes:
+      - mysql-data:/var/lib/mysql
+
+  mysql-test:
+    image: mysql:5.7
+    platform: linux/amd64
+    ports:
+      - '3307:3306'
+    environment:
+      MYSQL_ROOT_PASSWORD: secret
+      MYSQL_DATABASE: moviedb_test
+    volumes:
+      - mysql-test-data:/var/lib/mysql
+
+volumes:
+  mysql-data:
+  mysql-test-data:
