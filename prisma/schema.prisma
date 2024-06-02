@@ -12,3 +12,13 @@ datasource db {
   provider = "mysql"
   url      = env("DATABASE_URL")
 }
+
+// 映画情報のモデル
+model MovieInfo {
+  movieId       Int     @default(autoincrement()) @id
+  movieName     String
+  screeningTime Int
+  startTime     DateTime
+  overview      String
+  thumbnail     String?
+}
