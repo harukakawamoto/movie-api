@@ -13,7 +13,6 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-// 映画情報のモデル
 model MovieInfo {
   movieId       Int     @default(autoincrement()) @id
   movieName     String
